@@ -1,7 +1,7 @@
 ---
 name: xelflow-flows
 description: Create, edit, and manage Xelflow Flows and Events. Trigger when the user wants to implement server-side business logic, create new flows, or modify existing flow JSON files in the `flows/` directory.
-version: 1.0.0
+version: 1.0.1
 license: MIT
 ---
 
@@ -22,7 +22,7 @@ This skill helps you work with Xelflow Flow definitions. Xelflow uses JSON files
     -   `SendEmail`: SMTP emails.
     -   `SendMessageToUser`: SSE to client.
     -   `SendNotification`: VAPID push notifications.
-    -   `SendEvent`: Trigger other flows.
+    -   `SendEvent`: Trigger other flows or continue parent flow.
     -   `HttpsAction`: External API calls.
     -   `ValidateContext`: Logic validation.
     -   `AddDataToContext`: Variable storage.
