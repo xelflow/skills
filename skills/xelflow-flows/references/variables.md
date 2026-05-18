@@ -41,6 +41,7 @@ List with available functions:
 | **CONTAINS**         | Returns `true` if the first value contains the second value, otherwise `false`                                                      |
 | **LESS_OR_EQUAL**    | Returns `true` if the first value is smaller than or equal to the second value, otherwise `false`                                   |
 | **IF_ELSE**          | Returns the first value if the condition is true, otherwise the second value. Syntax: `IF_ELSE(condition, true_value, false_value)` |
+| **MAP**              | Maps a list to a new list base on a map expression. Syntax: `FILTER(list, 'item', expression)`                                      |
 | **FILTER**           | Filters a list based on a filter expression. Syntax: `FILTER(list, 'item', expression)`                                             |
 | **CONCAT**           | Joins lists together. Syntax: `CONCAT(list1, list2, ...)`                                                                           |
 | **COUNT**            | Returns the number of elements in a list. Syntax: `COUNT(list)`                                                                     |
@@ -68,8 +69,10 @@ ${DATEPART(datetime, 'year')}
 ${DATEPART(NOW('W. Europe Standard Time'),'hour')}
 ${DATEPART(TODAY('W. Europe Standard Time'),'day')}
 ${GREATER(a, b)}
-${FILTER(items, 'item', item.active)}
+${FILTER(items, 'item', 'item.active')}
 ${FILTER(numbers, 'n', GREATER(n, 25))}
+${MAP(items, 'item', 'item.Id')}
+${MAP(items, 'item', MIN(item.Price, item.TotalPrice))}
 ${CONTAINS(text, 'world')}
 ${COUNT(items)}
 ```

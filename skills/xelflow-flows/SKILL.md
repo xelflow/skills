@@ -1,7 +1,7 @@
 ---
 name: xelflow-flows
 description: Create, edit, and manage Xelflow Flows and Events. Trigger when the user wants to implement server-side business logic, create new flows, or modify existing flow JSON files in the `flows/` directory.
-version: 1.0.2
+version: 1.0.3
 license: MIT
 ---
 

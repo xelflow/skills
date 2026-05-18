@@ -30,7 +30,7 @@ for variable usage see [Reference: Variables](variables.md) for details.
     "Type": "SendMessageToUsers",
     "Parameters": {
         "Event": "ItemChanged",
-        "Users": "${userOids}",
+        "Users": "${MAP(userOids, 'user', 'user.oid')}",
         "Data": {
             "Item": "Some item",
             "ChangedBy": "${user.FirstName} ${user.LastName}"
