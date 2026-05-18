@@ -1,7 +1,7 @@
 ---
 name: xelflow-flows
 description: Create, edit, and manage Xelflow Flows and Events. Trigger when the user wants to implement server-side business logic, create new flows, or modify existing flow JSON files in the `flows/` directory.
-version: 1.0.1
+version: 1.0.2
 license: MIT
 ---
 
@@ -21,6 +21,7 @@ This skill helps you work with Xelflow Flow definitions. Xelflow uses JSON files
     -   `QueryDatabase`: Execute SQL.
     -   `SendEmail`: SMTP emails.
     -   `SendMessageToUser`: SSE to client.
+    -   `SendMessageToUsers`: SSE to other users.
     -   `SendNotification`: VAPID push notifications.
     -   `SendEvent`: Trigger other flows or continue parent flow.
     -   `HttpsAction`: External API calls.
@@ -42,6 +43,9 @@ See [Reference: QueryDatabase](references/query_database.md).
 
 ### SendMessageToUser
 See [Reference: SendMessageToUser](references/send_message_to_user.md).
+
+### SendMessageToUsers
+See [Reference: SendMessageToUsers](references/send_message_to_users.md).
 
 ### SendEmail
 See [Reference: SendEmail](references/send_email.md).

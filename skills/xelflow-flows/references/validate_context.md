@@ -8,6 +8,8 @@ Validates the context based on several rules. If validation fails, the flow is s
 |:------------------------------|:-----------------------------------------------------------------------------------------|
 | **Key-Value pair** (req, var) | The Key is the name of the validation rule. The Value is the expression that is checked. |
 
+for variable usage see [Reference: Variables](variables.md) for details.
+
 ## Examples
 ```
 "validate-admin-user": {

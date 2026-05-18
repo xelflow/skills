@@ -14,6 +14,8 @@ This section provides guidance on sending an HTTP request to an external API. Th
 | **StreamEvent** (opt)  | Event and Version sent per chunk of the stream, e.g. `StreamChunk@1.0`. |
 req=required, opt=optional, var=variable
 
+for variable usage see [Reference: Variables](variables.md) for details.
+
 ## Examples
 ### Send a request to an external API
 ```

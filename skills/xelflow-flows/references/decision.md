@@ -11,6 +11,8 @@ Makes a decision based on a condition. If the condition is true, the `TrueStepId
 | **FalseStepId** (req)    | The step executed if the condition is false.                                                                           |
 req=required, var=variable, opt=optional
 
+for variable usage see [Reference: Variables](variables.md) for details.
+
 ## Example
 ```
 "decision-step": {

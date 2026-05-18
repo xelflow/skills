@@ -12,6 +12,8 @@ This flow step sends a notification to a specified recipient using the VAPID pro
 | **Message** (req, var)  | Object with the payload sent to the client. |
 req=required, var=variable, opt=optional
 
+for variable usage see [Reference: Variables](variables.md) for details.
+
 ## Example
 ```
 "send-notification": {

@@ -17,6 +17,8 @@ This flow step sends a event that can be used to trigger other flows.
 | **Data** (req, var)              | Object with the payload sent with the event.                                                                                                                       |
 req=required, var=variable, opt=optional
 
+for variable usage see [Reference: Variables](variables.md) for details.
+
 ## Cases
 ### Start flow fire and forget
 Only specify the `Name` and `Version` parameters and optionally the `Data` parameter.

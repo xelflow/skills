@@ -14,6 +14,8 @@ Sends an email via the configured SMTP server. The `AuthenticationId` is mandato
 | **IsHtml** (opt)       | Set to `true` to send the body as HTML. |
 req = required, var = variable, opt = optional
 
+for variable usage see [Reference: Variables](variables.md) for details.
+
 ## Examples
 ### Send error email
 ```

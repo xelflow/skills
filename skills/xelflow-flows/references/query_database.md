@@ -14,8 +14,9 @@ This section provides guidance on querying databases within Xelflow flows. It co
 |                           | - `Part`: SQL query part, like `Select`, `From`, `Where`, `GroupBy`, `OrderBy`, `Limit`.                                                                          |
 |                           | - `Conditions`: Optional conditions for the query part.                                                                                                           |
 | **Parameters** (req, var) | Object that maps values to SQL parameters. You can use Variables and Functions here, e.g. `${event.data.limit}`.                                                  |
-
 req = required, var = variable, opt = optional
+
+for variable usage see [Reference: Variables](variables.md) for details.
 
 ## Examples
 ### Simple Select with pagination
