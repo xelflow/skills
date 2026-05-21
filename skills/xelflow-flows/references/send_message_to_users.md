@@ -4,23 +4,23 @@ This section provides guidance on sending messages to other users with Server Se
 
 ## Structure
 
-| Parameter            | Description                                                       |
-|:---------------------|:------------------------------------------------------------------|
-| **Event** (req, var) | Name of the event triggered on the client (e.g., `MessageSaved`). |
-| **Data** (req, var)  | Object with the payload sent to the client.                       |
-| **Users** (req, var) | List of user OIDs to send the message to.                         |
+| Parameter            | Description                                                                                            |
+|:---------------------|:-------------------------------------------------------------------------------------------------------|
+| **Event** (req, var) | Name of the event triggered on the client (e.g., `MessageSaved`).                                      |
+| **Data** (req, var)  | Object with the payload sent to the client.                                                            |
+| **Users** (req, var) | List of user OIDs to send the message to. Users can be a list of string or a list of objects with Oid. |
 req = required, var = variable, opt = optional
 
 for variable usage see [Reference: Variables](variables.md) for details.
 
 ## Examples
-### Sending query results to a user
+### Sending query results to a user with a list of objects with Oid
 ```
-"get-userss-step": {
+"get-users-step": {
     "Id": "get-users-step",
     "Type": "QueryDatabase",
     "Parameters": {
-        "Query": "SELECT oid FROM users"
+        "Query": "SELECT Oid FROM users"
     },
     "Alias": "userOids",
     "NextStepId": "send-types-step"
@@ -30,7 +30,32 @@ for variable usage see [Reference: Variables](variables.md) for details.
     "Type": "SendMessageToUsers",
     "Parameters": {
         "Event": "ItemChanged",
-        "Users": "${MAP(userOids, 'user', 'user.oid')}",
+        "Users": "${userOids}",
+        "Data": {
+            "Item": "Some item",
+            "ChangedBy": "${user.FirstName} ${user.LastName}"
+        },
+    },
+    "NextStepId": null
+}
+```
+### Sending query results to a user with a list of string
+```
+"get-users-step": {
+    "Id": "get-users-step",
+    "Type": "QueryDatabase",
+    "Parameters": {
+        "Query": "SELECT Oid FROM users"
+    },
+    "Alias": "userOids",
+    "NextStepId": "send-types-step"
+},
+"send-types-step": {
+    "Id": "send-types-step",
+    "Type": "SendMessageToUsers",
+    "Parameters": {
+        "Event": "ItemChanged",
+        "Users": "${MAP(userOids, 'user', 'user.Oid')}",
         "Data": {
             "Item": "Some item",
             "ChangedBy": "${user.FirstName} ${user.LastName}"

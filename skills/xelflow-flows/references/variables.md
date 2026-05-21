@@ -17,6 +17,20 @@ Example:
 ```
 In this example, all the fields can be variables. But from and subject are fixed and to and body use interpolation placeholders.
 
+### Special variables
+List with special variables that can be used in most of the places.
+
+| Variable      | Description                                                                                                            |
+|:--------------|:-----------------------------------------------------------------------------------------------------------------------|
+| **user**      | The user object with properties: `Id`, `Email`, `FirstName`, `LastName`, `Oid`.                                        |
+| **principal** | The principal object with properties: `UserId` = user.Oid, `IdentityProvider`, `UserDetails`.                          |
+| **event**     | The event object with properties: `event` = the event name, `version` = the event version, `data` = the event payload. |
+| **error**     | The error message, used to send the system error back to the user                                                      |
+
+The principal is only available when the user is logged in.
+The user is only available when the user is logged in and registered in the system.
+The error is only available in the error steps, when an error occurs during the execution of the flow.
+
 ### Functions
 Interpolation placeholder also can contain functions: \${functionName(arg1,arg2)} or nested functions: \${functionName(functionName(arg1),arg2)}
 List with available functions:
